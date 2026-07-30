@@ -13,7 +13,8 @@ HYDROFABRIC_IDS=(
 )
 
 # module load OpenMPI netCDF Apptainer
-cd "$HOME/CCNH_cloud/notebooks"
+cd "$HOME/CCNH_cloud/"
+python3.12 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt

@@ -2,7 +2,7 @@
 
 mkdir -p logs
 
-cd "$HOME/CCNH_cloud/notebooks"
+cd "$HOME/CCNH_cloud/"
 
 IMAGE_NAME="quay.io/awiciroh/ngiab-2i2c:v1.2.3"
 HYDROFABRIC_IDS=(
@@ -29,10 +29,10 @@ for HYDROFABRIC_ID in "${HYDROFABRIC_IDS[@]}"; do
 
     start_ts=$(date +%s)
     docker run --rm \
-        -v /local:/local \
-        -v /home/exouser:/home/exouser \
+        -v "$HOME/ngiab_preprocess_output/:$HOME/ngiab_preprocess_output/" \
+        -v "$(pwd):$(pwd)" \
         -w "$(pwd)" \
-        -e NGIAB_HOME=/home/exouser \
+        -e NGIAB_HOME=$HOME \
         "$IMAGE_NAME" /ngen/.venv/bin/python -c \
             "exec(compile(open('run_model.py').read(), 'run_model.py', 'exec'))" \
             --hydrofabric-id "$HYDROFABRIC_ID" \

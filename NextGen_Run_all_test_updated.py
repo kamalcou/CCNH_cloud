@@ -48,7 +48,7 @@ end_date        = pd.to_datetime(args.end_date)
 #precip_sources  = args.precip_sources
 #spatial_agg = args.spatial_agg
 
-host_data_path  = Path(f"/home/exouser/ngiab_preprocess_output/{hydrofabric_id}")
+host_data_path  = Path(f"$HOME/ngiab_preprocess_output/{hydrofabric_id}")
 image_name      = "quay.io/awiciroh/ngiab-2i2c:v1.2.3"
 num_cpus        = int(os.cpu_count())   
 
