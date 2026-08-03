@@ -5,6 +5,7 @@ mkdir -p logs
 cd "$HOME/CCNH_cloud/"
 
 IMAGE_NAME="quay.io/awiciroh/ngiab-2i2c:v1.2.3"
+IMAGE_NAME="ngiab-2i2c:arm64"
 HYDROFABRIC_IDS=(
     "gage-02464000"
     "gage-02361000"
